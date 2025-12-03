@@ -1,8 +1,12 @@
 # Movie Recommender System
 
-This project is a movie recommendation engine with a Python Flask API backend and a React front-end. The system uses content-based filtering for generating recommendations.
+## Overview
 
----
+This project is a **full-stack movie recommendation engine** designed to suggest films based on user preferences. It uses a modern architecture with a Python API, ML backend to serve recommendations and a React frontend for a dynamic user interface.
+
+* **Recommendation Method:** **Content-Based Filtering** (The system recommends movies that are similar in content—such as genre, cast, or director—to movies the user already likes.)
+* **Architecture:** **Flask** API (Backend) and **React** (Frontend).
+
 
 ## Demo
 
@@ -11,25 +15,74 @@ This project is a movie recommendation engine with a Python Flask API backend an
 
 ---
 
-## Prerequisites
+## Key Features
 
-Ensure you have Python 3.x and Node.js/npm installed.
+* **Personalized Recommendations:** Generates suggestions based on movie attributes.
+* **RESTful API:** Provides a clean interface for fetching recommendations.
+* **Modern UI:** A fast and responsive interface built with React.
 
 ---
 
-## Setup Instructions
+##  Prerequisites
 
-The application requires the backend and frontend to run concurrently in two separate terminal sessions.
-Install first requirements : pip install -r requirements.txt
+Ensure you have the following installed on your system:
 
-### 1. Backend (Python/Flask)
+* **Python 3.x**
+* **Node.js / npm**
+* **Git**
+
+---
+
+##  Setup Instructions
+
+The application requires the backend and frontend to run **concurrently** in two separate terminal sessions.
+
+### 1. Initial Project Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [Your-GitHub-Repository-URL]
+    cd movie-recommender-system
+    ```
+2.  **Install Backend Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### 2. Backend (Python/Flask) Setup
 
 This server hosts the similarity model and the recommendation API.
 
-Navigate to the backend directory: cd back
-Run the process.py and then app.py
+1.  **Navigate to the backend directory:**
+    ```bash
+    cd back
+    ```
+2.  **Process Data & Build the Model:**
+    This step generates the necessary data structures (e.g., similarity matrix) used by the API.
+    ```bash
+    python process.py
+    ```
+3.  **Start the API Server:**
+    ```bash
+    python app.py
+    ```
+    *The API should now be running locally, typically at `http://127.0.0.1:5000`.*
 
-### 2. Frontend (React)
+### 3. Frontend (React) Setup
 
-Go to the terminal : cd react.And instal npm : npm install.Then u can start npm : npm start.
+The user interface connects to the local Flask API.
 
+1.  **Navigate to the frontend directory:**
+    ```bash
+    cd ../react
+    ```
+2.  **Install Frontend Dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Start the React Application:**
+    ```bash
+    npm start
+    ```
+    *The application will automatically open in your web browser, typically at `http://localhost:3000`.*
+---
